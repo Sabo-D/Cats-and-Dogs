@@ -3,8 +3,8 @@ import torch
 import src.train_model as train_model
 import src.dataset as dataset
 import src.plot as plot
-import src.model as model
-from src.model import Inception
+
+from src.GoogLeNet import Inception
 
 if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

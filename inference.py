@@ -1,7 +1,7 @@
 import torch
-import src.model as model
+import src.GoogLeNet as model
 import src.dataset as dataset
-from src.model import Inception
+from src.GoogLeNet import Inception
 import src.inference_model as inference_model
 
 
