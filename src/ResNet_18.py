@@ -58,6 +58,21 @@ class ResNet18(nn.Module):
             nn.Linear(512, 10),
         )
 
+        self._init_weights()
+
+        def _init_weights(self):
+            for m in self.modules():
+                if isinstance(m, nn.Conv2d):
+                    nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+                    if m.bias is not None:
+                        nn.init.constant_(m.bias, 0)
+                elif isinstance(m, nn.BatchNorm2d):
+                    nn.init.constant_(m.weight, 1)
+                    nn.init.constant_(m.bias, 0)
+                if isinstance(m, nn.Linear):
+                    nn.init.xavier_normal_(m.weight)
+                    nn.init.constant_(m.bias, 0)
+
     def forward(self, x):
         x = self.b1(x)
         x = self.b2(x)
