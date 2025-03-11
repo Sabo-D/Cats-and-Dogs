@@ -18,9 +18,8 @@ def model_train(model, train_dataloader, val_dataloader, num_epochs):
     train_loss_all, val_loss_all = [], []
     train_acc_all, val_acc_all = [], []
 
-    since = time.time()
-
     for epoch in range(num_epochs):
+        since = time.time()
         print("Epoch {}/{}".format(epoch + 1, num_epochs))
         print('-' * 10)
 
